@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_postgres_addresses
+    description: List of Addresses
+  - name: stg_postgres_events
+    description: Record of Events when interacting with our greenery website
+  - name: stg_postgres_order_items
+    description: Information about the order and which products were included
+  - name: stg_postgres_orders
+    description: Records for orders placed
+  - name: stg_postgres_products
+    description: Product information
+  - name: stg_postgres_promos
+    description: Promo information
+  - name: stg_postgres_users
+    description: Records for users
