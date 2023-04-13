@@ -1,18 +1,18 @@
-{{
+{{ 
     config(
         materialized = 'table'
     )
 }}
 
 with source as (
-    select * from {{ source('postgres', 'order_items')}}
+    select * from {{ source('postgres', 'promos')}}
 )
 
 , renamed_recast as (
     select
-        order_id as order_id_guid
-        , product_id as product_id_guid
-        , quantity
+        promo_id
+        , discount
+        , status
     from source
 )
 
