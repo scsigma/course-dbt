@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: int_event_prod
+    description: join the event and prod tables together
