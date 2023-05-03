@@ -74,6 +74,9 @@ I created a macro for the event type count calculation used in the int_session_e
 {% endmacro %} 
 ```
 
+# Part 5
+![Screenshot 2023-05-03 at 12 15 36 PM](https://user-images.githubusercontent.com/120054623/236033600-618cb1a4-652d-429b-aa51-3ce0b5af3adf.png)
+
 
 
 # Part 6
