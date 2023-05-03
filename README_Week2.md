@@ -20,6 +20,9 @@ Customer satisfaction information - did they leave a review? if they did, was it
 #### Explain the product mart models you added. Why did you organize the models in the way you did?
 I created a fact_page_views model which describes each page view event and the product that was viewed. I used an intermediate table to join the events and products table together before creating this fact table. 
 
+<img width="1042" alt="Screenshot 2023-04-23 at 9 02 51 PM" src="https://user-images.githubusercontent.com/120054623/233899700-2958bd4d-e44a-4004-a524-72ee08f3e525.png">
+
+
 
 ## Part 2. Tests
 
