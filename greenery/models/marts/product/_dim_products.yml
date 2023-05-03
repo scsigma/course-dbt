@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: Overview of the individual products. Contains information about price, inventory, total orders, and total session events. Note - this does not contain the event for checkout.
+    columns:
+      - name: product_guid
+        description: unique identifier for the product
+        tests:
+          - not_null
+          - unique
+      - name: product_name
+        description: name of the product
+        tests:
+          - not_null
+          - unique
+      - name: product_price
+        description: price of the product
+        tests: 
+          - not_null
+      - name: product_inventory
+        description: current inventory of product. likely updated from a snapshot, idk
+      - name: total_product_orders
+        description: Total count of units ordered for a given product
+      - name: total_session_events
+        description: total count of events for this product, which means viewed and added to cart. not sure of checkouts at this point.
+      

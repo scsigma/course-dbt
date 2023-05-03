@@ -1,0 +1,5 @@
+version: 2
+
+models: 
+  - name: fact_conversion_rate
+    description: Joining two intermediate tables together. One is information about the sessions that proceeded to checkout. The other is an aggregated events table. We join these together by the product id. 

@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: int_checkout_orders
+    description: Table of events that were checkout orders. Broken down by specific product name and the quantity ordered. 

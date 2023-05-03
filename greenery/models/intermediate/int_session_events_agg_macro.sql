@@ -1,6 +1,6 @@
 {{
     config(
-        materialized = 'table'
+        materialized = 'view'
     )
 }}
 
@@ -11,12 +11,13 @@
 %}
 
 select 
-    session_id_guid as event_session_guid
-    , created_at
-    , user_id_guid as event_user_guid
+    event_user_guid
+    , event_session_guid
     {%- for event_type in event_types %}
     , sum(case when event_type = '{{ event_type }}' then 1 else 0 end) as {{ event_type }}s
     {%- endfor %}
+    , min(event_created_at) as first_session_event_at_utc
+    , max(event_created_at) as last_session_event_at_utc
 from {{ ref('stg_postgres_events') }}
 
-group by 1,2,3
+group by 1,2

@@ -10,14 +10,14 @@ with source as (
 
 , renamed_recast as (
     select
-        event_id as event_id_guid
-        , session_id as session_id_guid
-        , user_id as user_id_guid
-        , page_url
-        , created_at
+        event_id as event_guid
+        , session_id as event_session_guid
+        , user_id as event_user_guid
+        , page_url as event_page_url
+        , created_at as event_created_at
         , event_type
-        , order_id as order_id_guid
-        , product_id as product_id_guid
+        , order_id as event_order_guid
+        , product_id as event_product_guid
     from source
 )
 

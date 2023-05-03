@@ -10,9 +10,9 @@ with source as (
 
 , renamed_recast as (
     select
-        order_id as order_id_guid
-        , product_id as product_id_guid
-        , quantity
+        order_id as order_item_order_guid
+        , product_id as order_item_product_guid
+        , quantity as order_item_quantity
     from source
 )
 

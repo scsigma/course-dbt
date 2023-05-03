@@ -10,7 +10,7 @@ with source as (
 
 , renamed_recast as (
     select
-        promo_id
+        promo_id as promo_guid
         , discount
         , status
     from source

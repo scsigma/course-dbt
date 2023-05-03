@@ -1,29 +1,22 @@
-{{
+{{ 
     config(
-        materialized = 'table'
+        materialized='table'
     )
 }}
 
-with source as (
-    select * from {{ ref('int_event_prod') }}
-) 
 
-, page_views as (
-    select 
-        date
-        , product_id
-        , product_name
-        , price
-        , count(distinct case when event_type = 'page_view' then event_type end) as page_views
-        , count(distinct case when event_type = 'added_to_cart' then event_type end) as added_to_carts
-        , count(distinct case when event_type = 'checkout' then event_type end) as checkouts
-    from source
-    where event_type in ('page_view','added_to_cart','checkout')
-    and date is not null
-    and product_id is not null
-    and product_name is not null
-    and price is not null
-    group by 1,2,3,4
+with session_events_agg as (
+    select * from {{ ref('int_session_events_agg') }}
 )
 
-select * from page_views
+, final as (
+    select 
+        event_user_guid,
+        event_session_guid,
+        sum(total_page_views) as page_views
+    from session_events_agg
+    group by 1,2
+)
+
+
+select * from final
