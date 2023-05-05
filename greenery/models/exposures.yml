@@ -1,0 +1,14 @@
+version: 2
+
+exposures:  
+  - name: Product Funnel Dashboard
+    url: https://app.sigmacomputing.com/corise-dbt/workbook/workbook-3E8XTny7i7gjX9zUOGRw2t?:link_source=share
+    description: >
+      Models that are critical to our product funnel dashboard
+    type: dashboard
+    maturity: high
+    owner:
+      name: Sully Clark
+      email: sully@sigmacomputing.com
+    depends_on:
+      - ref('fact_conversion_rate_enhanced')

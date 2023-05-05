@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: fact_conversion_rate_with_purchases
+    description: Enriched session events agg table with a column identifying if an individual product was purchased
